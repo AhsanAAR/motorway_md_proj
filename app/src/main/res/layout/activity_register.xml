@@ -11,68 +11,86 @@
         android:id="@+id/phone_id"
         android:layout_width="362dp"
         android:layout_height="46dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="420dp" />
+        app:layout_constraintEnd_toEndOf="@+id/password_id"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/password_id"
+        app:layout_constraintTop_toBottomOf="@+id/password_id" />
 
     <EditText
         android:id="@+id/password_id"
         android:layout_width="362dp"
         android:layout_height="46dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="354dp" />
+        app:layout_constraintEnd_toEndOf="@+id/email_id"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/email_id"
+        app:layout_constraintTop_toBottomOf="@+id/email_id" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:text="Motorway App"
         android:textSize="32sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="88dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title_desc_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Create New Account"
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="163dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/name_id"
         android:layout_width="364dp"
         android:layout_height="46dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="222dp" />
+        app:layout_constraintEnd_toEndOf="@id/title_desc_id"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/title_desc_id"
+        app:layout_constraintTop_toBottomOf="@+id/title_desc_id" />
 
     <EditText
         android:id="@+id/email_id"
         android:layout_width="362dp"
         android:layout_height="46dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="292dp" />
+        app:layout_constraintEnd_toEndOf="@+id/name_id"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/name_id"
+        app:layout_constraintTop_toBottomOf="@+id/name_id" />
 
     <Button
         android:id="@+id/register_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Register"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="506dp" />
+        app:layout_constraintEnd_toEndOf="@+id/phone_id"
+        app:layout_constraintStart_toStartOf="@+id/phone_id"
+        app:layout_constraintTop_toBottomOf="@+id/phone_id" />
 
     <TextView
         android:id="@+id/textView3"
