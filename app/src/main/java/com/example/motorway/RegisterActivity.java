@@ -24,6 +24,10 @@ public class RegisterActivity extends AppCompatActivity {
     TextView mLoginBtn;
     FirebaseAuth fAuth;
 
+    public void loginClicked(View view){
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -60,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(getApplicationContext(), "User Created", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                            finish();
                         }
                         else{
                             Toast.makeText(getApplicationContext(), "ERROR" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();

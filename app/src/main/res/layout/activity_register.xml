@@ -98,6 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="Already registered? Login Here"
+        android:onClick="loginClicked"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/register_button_id"
         app:layout_constraintStart_toStartOf="@+id/register_button_id"
