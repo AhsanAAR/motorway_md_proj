@@ -14,12 +14,8 @@
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_id"
-        app:layout_constraintVertical_bias="0.384" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="420dp" />
 
     <EditText
         android:id="@+id/password_id"
@@ -28,12 +24,8 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_id"
-        app:layout_constraintVertical_bias="0.214" />
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="354dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -42,23 +34,17 @@
         android:text="Motorway App"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16000003" />
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="88dp" />
 
     <TextView
         android:id="@+id/title_desc_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28sp"
         android:text="Create New Account"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="163dp" />
 
     <EditText
         android:id="@+id/name_id"
@@ -67,12 +53,8 @@
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_desc_id"
-        app:layout_constraintVertical_bias="0.13999999" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="222dp" />
 
     <EditText
         android:id="@+id/email_id"
@@ -81,34 +63,25 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_id"
-        app:layout_constraintVertical_bias="0.047" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="292dp" />
 
     <Button
         android:id="@+id/register_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_id"
-        app:layout_constraintVertical_bias="0.19999999" />
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="506dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:text="Already registered? Login Here"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button_id"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/register_button_id"
+        app:layout_constraintStart_toStartOf="@+id/register_button_id"
+        app:layout_constraintTop_toBottomOf="@+id/register_button_id" />
 </androidx.constraintlayout.widget.ConstraintLayout>
