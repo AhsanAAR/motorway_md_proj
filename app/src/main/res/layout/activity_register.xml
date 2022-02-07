@@ -11,103 +11,82 @@
         android:id="@+id/phone_id"
         android:layout_width="362dp"
         android:layout_height="46dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_id"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintTop_toBottomOf="@+id/password_id"
+        tools:layout_editor_absoluteX="24dp" />
 
     <EditText
         android:id="@+id/password_id"
         android:layout_width="362dp"
         android:layout_height="46dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_id"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintTop_toBottomOf="@+id/email_id"
+        tools:layout_editor_absoluteX="24dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
         android:text="Motorway App"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16000003" />
+        tools:layout_editor_absoluteX="101dp" />
 
     <TextView
         android:id="@+id/title_desc_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28sp"
+        android:layout_marginTop="16dp"
         android:text="Create New Account"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="113dp" />
 
     <EditText
         android:id="@+id/name_id"
         android:layout_width="364dp"
         android:layout_height="46dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Full Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_desc_id"
-        app:layout_constraintVertical_bias="0.13999999" />
+        tools:layout_editor_absoluteX="24dp" />
 
     <EditText
         android:id="@+id/email_id"
         android:layout_width="362dp"
         android:layout_height="46dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_id"
-        app:layout_constraintVertical_bias="0.047" />
+        tools:layout_editor_absoluteX="24dp" />
 
     <Button
         android:id="@+id/register_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_id"
-        app:layout_constraintVertical_bias="0.19999999" />
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="542dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already registered? Login Here"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button_id"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_button_id"
+        tools:layout_editor_absoluteX="83dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
