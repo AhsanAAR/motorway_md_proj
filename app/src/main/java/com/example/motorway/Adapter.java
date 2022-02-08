@@ -57,7 +57,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
                         context.startActivity(i);
                         break;
                     case "Report":
-                        i = new Intent(context, Reportdetails.class);
+                        i = new Intent(context, ReportDetails.class);
                         i.putExtra("pos", position);
                         context.startActivity(i);
                         break;
