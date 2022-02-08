@@ -13,7 +13,7 @@ public class DAOMessage {
     }
 
     public Task<Void> add(Message m){
-        return reference.setValue(m);
+        return reference.push().setValue(m);
     }
 
 }
