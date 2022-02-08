@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HelpUpload"
-    android:background="@drawable/highway">
+    android:background="@drawable/mw1">
 
     <EditText
         android:id="@+id/registration_text"
@@ -40,6 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:onClick="sendMessage"
+        android:backgroundTint="#ffc90a"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="Send"
         app:layout_constraintEnd_toEndOf="@id/message_text"
         app:layout_constraintStart_toStartOf="@id/message_text"
