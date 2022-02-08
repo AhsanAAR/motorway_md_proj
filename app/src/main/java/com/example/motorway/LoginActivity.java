@@ -7,11 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.firebase.ui.auth.data.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -54,6 +54,15 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
+                    if(email.equals("admin@nhmp.gov.pk")){
+                        Toast.makeText(getApplicationContext(), "Admin Panel!", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), AdminDashboard.class);
+                        startActivity(i);
+                    }else{
+                        Toast.makeText(getApplicationContext(), "User Panel", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), UserDashboard.class);
+                        startActivity(i);
+                    }
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "ERROR" +
@@ -73,9 +82,6 @@ public class LoginActivity extends AppCompatActivity {
         password_text = findViewById(R.id.password_id);
         progressBar = findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
-
-
-
 
     }
 }
