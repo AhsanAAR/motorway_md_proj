@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Motorway">
         <activity
-            android:name=".ReportDetails"
+            android:name=".Reportdetails"
             android:exported="false" />
         <activity
             android:name=".InfoDetails"
