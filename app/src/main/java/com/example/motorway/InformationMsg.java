@@ -14,5 +14,6 @@ public class InformationMsg extends  Message{
     public InformationMsg(String text, String uid) {
         this.text = text;
         Uid = uid;
+        this.type = "Info";
     }
 }

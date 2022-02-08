@@ -16,5 +16,6 @@ public class ReportMessage extends Message{
     public ReportMessage(String text, Location loc) {
         this.text = text;
         this.loc = loc;
+        this.type = "Report";
     }
 }

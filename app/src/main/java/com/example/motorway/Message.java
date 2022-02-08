@@ -14,6 +14,7 @@ import java.util.Objects;
 
 public class Message {
     String text;
+    String type;
 
     public String getText() {
         return text;
@@ -21,5 +22,13 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

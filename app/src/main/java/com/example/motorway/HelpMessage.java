@@ -40,5 +40,6 @@ public class HelpMessage extends Message{
         this.registrationNumber = registrationNumber;
         this.UId = UId;
         this.loc = loc;
+        this.type = "Help";
     }
 }

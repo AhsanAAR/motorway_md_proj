@@ -1,6 +1,7 @@
 package com.example.motorway;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.name.setText("Resolved");
+                switch (m.getType()){
+                    case "Help":
+                        break;
+                    case "Info":
+                        break;
+                    case "Report":
+                        break;
+                }
             }
         });
     }
