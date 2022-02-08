@@ -38,5 +38,7 @@
         app:layout_constraintEnd_toEndOf="@+id/name_text"
         app:layout_constraintStart_toStartOf="@+id/name_text"
         app:layout_constraintTop_toBottomOf="@+id/name_text" />
+    android:background="@drawable/mw1"
+    tools:context=".InfoDetails">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
