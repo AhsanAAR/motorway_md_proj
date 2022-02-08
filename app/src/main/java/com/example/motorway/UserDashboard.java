@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class UserDashboard extends AppCompatActivity {
+    public static String UID;
 
     public void help(View view){
         Intent i = new Intent(getApplication(), MessageUpload.class);

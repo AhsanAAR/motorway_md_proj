@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -23,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
+    DatabaseReference reference;
 
     public void loginClicked(View view){
         finish();
@@ -40,10 +43,13 @@ public class RegisterActivity extends AppCompatActivity {
         mRegisterBtn = findViewById(R.id.register_button_id);
 
         fAuth = FirebaseAuth.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = mname.getText().toString().trim();
+                String phone = mphone.getText().toString().trim();
                 String email = memail.getText().toString().trim();
                 String password = mpassword.getText().toString().trim();
 
@@ -63,6 +69,9 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            User newUser = new User(name, email,
+                                    task.getResult().getUser().getUid(), phone);
+                            reference.child(newUser.getUID()).setValue(newUser);
                             Toast.makeText(getApplicationContext(), "User Created", Toast.LENGTH_SHORT).show();
                             finish();
                         }

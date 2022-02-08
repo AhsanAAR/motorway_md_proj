@@ -32,7 +32,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Message m = list.get(position);
-        holder.name.setText(m.getText_());
+        holder.name.setText(m.getText());
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     }else{
                         Toast.makeText(getApplicationContext(), "User Panel", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(getApplicationContext(), UserDashboard.class);
+                        UserDashboard.UID = task.getResult().getUser().getUid();
                         startActivity(i);
                     }
                 }
