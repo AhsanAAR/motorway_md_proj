@@ -21,7 +21,7 @@ public class MessageDisplay extends AppCompatActivity {
     DatabaseReference reference;
     RecyclerView recyclerView;
     Adapter adapter;
-    ArrayList<Message> list;
+    public static ArrayList<Message> list;
     String type;
 
     @Override
@@ -45,7 +45,18 @@ public class MessageDisplay extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
                 for(DataSnapshot d: snapshot.getChildren()){
-                    Message m =  d.getValue(Message.class);
+                    Message m = d.getValue(Message.class);;
+//                    switch(type){
+//                        case "Help":
+//                            m =  d.getValue(Message.class);
+//                            break;
+//                        case "Report":
+//                            m =  d.getValue(Message.class);
+//                            break;
+//                        case "Info":
+//                            m =  d.getValue(Message.class);
+//                            break;
+//                    }
                     list.add(m);
                 }
                 adapter.notifyDataSetChanged();

@@ -42,4 +42,7 @@ public class HelpMessage extends Message{
         this.loc = loc;
         this.type = "Help";
     }
+
+    public HelpMessage() {
+    }
 }

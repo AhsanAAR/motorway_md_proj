@@ -1,7 +1,9 @@
 package com.example.motorway;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.IDNA;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
 
@@ -31,22 +36,30 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, int position) {
+    public void onBindViewHolder(@NonNull Holder holder, @SuppressLint("RecyclerView") int position) {
         Message m = list.get(position);
         holder.name.setText(m.getText());
+
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String type = m.getType();
+                Intent i;
                 switch(m.getType()){
                     case "Help":
-                        context.startActivity(new Intent(context, HelpDetails.class));
+                        i = new Intent(context, HelpDetails.class);
+                        i.putExtra("pos", position);
+                        context.startActivity(i);
                         break;
                     case "Info":
-                        context.startActivity(new Intent(context, InfoDetails.class));
+                        i = new Intent(context, InfoDetails.class);
+                        i.putExtra("pos", position);
+                        context.startActivity(i);
                         break;
                     case "Report":
-                        context.startActivity(new Intent(context, ReportDetails.class));
+                        i = new Intent(context, ReportDetails.class);
+                        i.putExtra("pos", position);
+                        context.startActivity(i);
                         break;
                 }
             }
