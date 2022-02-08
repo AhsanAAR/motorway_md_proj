@@ -43,13 +43,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Motorway App"
+        android:text="Motorway"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -121,4 +122,14 @@
         app:layout_constraintEnd_toEndOf="@+id/register_button_id"
         app:layout_constraintStart_toStartOf="@+id/register_button_id"
         app:layout_constraintTop_toBottomOf="@+id/register_button_id" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="53dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:srcCompat="@drawable/symbol_nha" />
 </androidx.constraintlayout.widget.ConstraintLayout>
