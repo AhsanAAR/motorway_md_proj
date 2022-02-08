@@ -16,12 +16,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 public class MessageUpload extends AppCompatActivity {
 
     EditText msg;
-    DAOMessage dao;
+    String type;
 
     public void sendMessage(View view){
          Message m = new Message(msg.getText().toString());
          try{
-             dao.add(m).addOnSuccessListener(new OnSuccessListener<Void>() {
+             new DAOMessage(type).add(m).addOnSuccessListener(new OnSuccessListener<Void>() {
                  @Override
                  public void onSuccess(Void unused) {
                      Toast.makeText(MessageUpload.this, "Message sent!", Toast.LENGTH_SHORT).show();
@@ -42,19 +42,8 @@ public class MessageUpload extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_upload);
         msg = findViewById(R.id.message_text);
-        dao = new DAOMessage();
 
         Bundle b = getIntent().getExtras();
-        switch (b.getInt("type")){
-            case 0:
-                msg.setHint("help");
-                break;
-            case 1:
-                msg.setHint("report");
-                break;
-            case 2:
-                msg.setHint("info");
-                break;
-        }
+        type = b.getString("type");
     }
 }

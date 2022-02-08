@@ -8,8 +8,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DAOMessage {
     private DatabaseReference reference;
 
-    public DAOMessage(){
-        reference = FirebaseDatabase.getInstance().getReference(Message.class.getSimpleName());
+    public DAOMessage(String type){
+        reference = FirebaseDatabase.getInstance().getReference(type);
     }
 
     public Task<Void> add(Message m){

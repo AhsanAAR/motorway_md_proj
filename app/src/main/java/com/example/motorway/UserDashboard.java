@@ -10,19 +10,19 @@ public class UserDashboard extends AppCompatActivity {
 
     public void help(View view){
         Intent i = new Intent(getApplication(), MessageUpload.class);
-        i.putExtra("type", 0);
+        i.putExtra("type", "Help");
         startActivity(i);
     }
 
     public void report(View view){
         Intent i = new Intent(getApplication(), MessageUpload.class);
-        i.putExtra("type", 1);
+        i.putExtra("type", "Report");
         startActivity(i);
     }
 
     public void info(View view){
         Intent i = new Intent(getApplication(), MessageUpload.class);
-        i.putExtra("type", 2);
+        i.putExtra("type", "Info");
         startActivity(i);
     }
 

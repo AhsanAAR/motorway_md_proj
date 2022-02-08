@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,37 +19,28 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AdminDashboard extends AppCompatActivity {
-    DatabaseReference reference;
-    RecyclerView recyclerView;
-    Adapter adapter;
-    ArrayList<Message> list;
+
+    public void help(View view){
+        Intent i = new Intent(getApplication(), MessageDisplay.class);
+        i.putExtra("type", "Help");
+        startActivity(i);
+    }
+
+    public void report(View view){
+        Intent i = new Intent(getApplication(), MessageDisplay.class);
+        i.putExtra("type", "Report");
+        startActivity(i);
+    }
+
+    public void info(View view){
+        Intent i = new Intent(getApplication(), MessageDisplay.class);
+        i.putExtra("type", "Info");
+        startActivity(i);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        list = new ArrayList<>();
-        adapter = new Adapter(this, list);
-        recyclerView.setAdapter(adapter);
-
-        reference = FirebaseDatabase.getInstance().getReference("Message");
-        reference.addValueEventListener(new ValueEventListener() {
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot d: snapshot.getChildren()){
-                    Message m =  d.getValue(Message.class);
-                    list.add(m);
-                }
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 }
