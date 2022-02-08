@@ -4,6 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReportDetails">
+    tools:context=".Reportdetails">
 
+    <TextView
+        android:id="@+id/message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Message"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/location_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:onClick="showLocation"
+        android:text="Show Location on maps"
+        app:layout_constraintEnd_toEndOf="@+id/message_text"
+        app:layout_constraintStart_toStartOf="@+id/message_text"
+        app:layout_constraintTop_toBottomOf="@id/message_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>

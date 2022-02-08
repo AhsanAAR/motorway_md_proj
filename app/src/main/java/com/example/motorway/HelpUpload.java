@@ -22,7 +22,7 @@ import java.io.IOException;
 
 public class HelpUpload extends AppCompatActivity {
     Location location_current;
-    EditText regNumber;
+    EditText regNumber, message;
 
     public void sendMessage(View view){
         int p = ContextCompat.checkSelfPermission(getApplicationContext(),
@@ -35,8 +35,9 @@ public class HelpUpload extends AppCompatActivity {
             LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
             location_current = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         }
-        Message m = new HelpMessage(regNumber.getText().toString(),
-                UserDashboard.UID, location_current);
+        HelpMessage m = new HelpMessage(message.getText().toString(),
+                regNumber.getText().toString(),
+                UserDashboard.UID, location_current.getLatitude(), location_current.getLongitude());
         try{
             new DAOMessage("Help").add(m).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
@@ -61,5 +62,6 @@ public class HelpUpload extends AppCompatActivity {
         setContentView(R.layout.activity_help_upload);
 
         regNumber = findViewById(R.id.registration_text);
+        message = findViewById(R.id.message_text);
     }
 }

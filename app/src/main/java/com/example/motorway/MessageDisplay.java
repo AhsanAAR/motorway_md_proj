@@ -45,18 +45,18 @@ public class MessageDisplay extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
                 for(DataSnapshot d: snapshot.getChildren()){
-                    Message m = d.getValue(Message.class);;
-//                    switch(type){
-//                        case "Help":
-//                            m =  d.getValue(Message.class);
-//                            break;
-//                        case "Report":
-//                            m =  d.getValue(Message.class);
-//                            break;
-//                        case "Info":
-//                            m =  d.getValue(Message.class);
-//                            break;
-//                    }
+                    Message m = null;
+                    switch(type){
+                        case "Help":
+                            m = d.getValue(HelpMessage.class);
+                            break;
+                        case "Report":
+                            m =  d.getValue(ReportMessage.class);
+                            break;
+                        case "Info":
+                            m =  d.getValue(InformationMsg.class);
+                            break;
+                    }
                     list.add(m);
                 }
                 adapter.notifyDataSetChanged();

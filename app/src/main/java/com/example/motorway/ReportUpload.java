@@ -32,7 +32,9 @@ public class ReportUpload extends AppCompatActivity {
             LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
             location_current = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         }
-        Message m = new ReportMessage(report.getText().toString(), location_current);
+        ReportMessage m = new ReportMessage(report.getText().toString(),
+                location_current.getLatitude(),
+                location_current.getLongitude());
         try{
             new DAOMessage("Report").add(m).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override

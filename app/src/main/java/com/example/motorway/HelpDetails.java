@@ -3,8 +3,11 @@ package com.example.motorway;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,32 +18,41 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class HelpDetails extends AppCompatActivity {
     TextView reg_num, msg, name, phone_num;
-    Location loc;
+    double latitude, longitude;
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+
+    public void showLocation(View view){
+        Uri u = Uri.parse("geo:"+latitude+","+longitude);
+        Intent i = new Intent(Intent.ACTION_VIEW, u);
+        startActivity(i);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_details);
         int pos = getIntent().getExtras().getInt("pos");
-        Message m = MessageDisplay.list.get(pos);
+        HelpMessage m = (HelpMessage) MessageDisplay.list.get(pos);
 
         reg_num = findViewById(R.id.registration_text);
         msg = findViewById(R.id.message_text);
         name = findViewById(R.id.name_text);
         phone_num  = findViewById(R.id.phone_text);
 
-//        reg_num.setText(m.getRegistrationNumber());
+        reg_num.setText(m.getRegistrationNumber());
         msg.setText(m.getText());
-//        loc = m.getLoc();
+        latitude = m.getLatitude();
+        longitude = m.getLongitude();
 
-//        reference.child(m.getUId()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DataSnapshot> task) {
-//                User u = task.getResult().getValue(User.class);
-//                name.setText(u.getName());
-//                name.setText(u.getPhoneNumber());
-//            }
-//        });
+        reference.child(m.getUId()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.isSuccessful()) {
+                    User u = task.getResult().getValue(User.class);
+                    name.setText(u.getName());
+                    phone_num.setText(u.getPhoneNumber());
+                }
+            }
+        });
     }
 }

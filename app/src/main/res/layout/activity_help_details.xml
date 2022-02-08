@@ -55,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
+        android:onClick="showLocation"
         android:text="Show Location on maps"
         app:layout_constraintEnd_toEndOf="@+id/phone_text"
         app:layout_constraintStart_toStartOf="@+id/phone_text"

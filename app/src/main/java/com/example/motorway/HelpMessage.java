@@ -5,12 +5,8 @@ import android.location.Location;
 public class HelpMessage extends Message{
     String registrationNumber;
     String UId;
-    Location loc;
-
-    @Override
-    public String getText() {
-        return registrationNumber;
-    }
+    double latitude;
+    double longitude;
 
     public String getRegistrationNumber() {
         return registrationNumber;
@@ -28,21 +24,33 @@ public class HelpMessage extends Message{
         this.UId = UId;
     }
 
-    public Location getLoc() {
-        return loc;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLoc(Location loc) {
-        this.loc = loc;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
-    public HelpMessage(String registrationNumber, String UId, Location loc) {
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public HelpMessage(String text, String registrationNumber, String UId,
+                       double latitude, double longitude) {
+        this.text = text;
         this.registrationNumber = registrationNumber;
         this.UId = UId;
-        this.loc = loc;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.type = "Help";
     }
 
     public HelpMessage() {
+
     }
 }

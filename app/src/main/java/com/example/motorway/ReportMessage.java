@@ -3,19 +3,33 @@ package com.example.motorway;
 import android.location.Location;
 
 public class ReportMessage extends Message{
-    Location loc;
+    double latitude;
+    double longitude;
 
-    public Location getLoc() {
-        return loc;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLoc(Location loc) {
-        this.loc = loc;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
-    public ReportMessage(String text, Location loc) {
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public ReportMessage(String text, double latitude, double longitude) {
         this.text = text;
-        this.loc = loc;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.type = "Report";
+    }
+
+    public ReportMessage(){
+
     }
 }

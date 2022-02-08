@@ -16,4 +16,8 @@ public class InformationMsg extends  Message{
         Uid = uid;
         this.type = "Info";
     }
+
+    public InformationMsg(){
+
+    }
 }
