@@ -5,7 +5,7 @@
     android:id="@+id/tv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MessageUpload"
+    tools:context=".HelpUpload"
     android:background="@drawable/highway">
 
     <EditText
@@ -24,11 +24,11 @@
     <EditText
         android:id="@+id/message_text"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_margin="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:ems="10"
-        android:hint="Message"
+        android:hint="Message (Optional)"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

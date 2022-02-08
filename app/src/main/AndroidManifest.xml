@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Motorway">
         <activity
-            android:name=".MessageDisplay"
+            android:name=".ReportUpload"
             android:exported="false" />
         <activity
-            android:name=".MessageUpload"
+            android:name=".InformationUpload"
+            android:exported="false" />
+        <activity
+            android:name=".HelpUpload"
+            android:exported="false" />
+        <activity
+            android:name=".MessageDisplay"
             android:exported="false" />
         <activity
             android:name=".AdminDashboard"
