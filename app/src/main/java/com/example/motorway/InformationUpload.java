@@ -14,10 +14,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 public class InformationUpload extends AppCompatActivity {
     EditText query;
-
     public void sendMessage(View view){
         Message m = new InformationMsg(query.getText().toString(), UserDashboard.UID);
-
         try{
             new DAOMessage("Info").add(m).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override

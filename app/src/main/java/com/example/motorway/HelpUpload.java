@@ -2,7 +2,13 @@ package com.example.motorway;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,13 +18,25 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class HelpUpload extends AppCompatActivity {
+import java.io.IOException;
 
+public class HelpUpload extends AppCompatActivity {
+    Location location_current;
     EditText regNumber;
 
     public void sendMessage(View view){
+        int p = ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION);
+        if(p!= PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(HelpUpload.this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+        }
+        else {
+            LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
+            location_current = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        }
         Message m = new HelpMessage(regNumber.getText().toString(),
-                UserDashboard.UID, null);
+                UserDashboard.UID, location_current);
         try{
             new DAOMessage("Help").add(m).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override

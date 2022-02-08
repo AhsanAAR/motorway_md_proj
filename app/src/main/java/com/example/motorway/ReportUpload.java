@@ -2,7 +2,13 @@ package com.example.motorway;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,9 +20,19 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 public class ReportUpload extends AppCompatActivity {
     EditText report;
-
+    Location location_current;
     public void sendMessage(View view){
-        Message m = new ReportMessage(report.getText().toString(), null);
+        int p = ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION);
+        if(p!= PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(ReportUpload.this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+        }
+        else {
+            LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
+            location_current = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        }
+        Message m = new ReportMessage(report.getText().toString(), location_current);
         try{
             new DAOMessage("Report").add(m).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
