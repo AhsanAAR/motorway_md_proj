@@ -1,5 +1,7 @@
 package com.example.motorway;
 
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -39,10 +41,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
             public void onClick(View view) {
                 switch (m.getType()){
                     case "Help":
+                        context.startActivity(new Intent(context, HelpDetails.class));
                         break;
                     case "Info":
+                        context.startActivity(new Intent(context, InfoDetails.class));
                         break;
                     case "Report":
+                        context.startActivity(new Intent(context, Reportdetails.class));
                         break;
                 }
             }
