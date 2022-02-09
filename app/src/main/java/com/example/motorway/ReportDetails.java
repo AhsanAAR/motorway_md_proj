@@ -23,8 +23,9 @@ public class ReportDetails extends AppCompatActivity {
     }
 
     public void showLocation(View view){
-        Uri u = Uri.parse("geo:"+latitude+","+longitude);
-        Intent i = new Intent(Intent.ACTION_VIEW, u);
+        Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+        i.putExtra("lat", latitude);
+        i.putExtra("long", longitude);
         startActivity(i);
     }
 
