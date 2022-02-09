@@ -7,75 +7,144 @@
     android:background="@drawable/mw1"
     tools:context=".HelpDetails">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="253dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/symbol_nha" />
+
+   <TextView
+       android:id="@+id/reg_title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="50dp"
+       android:text="Registration Number"
+       android:textColor="@color/white"
+       android:textSize="13sp"
+       android:paddingStart="10dp"
+       app:layout_constraintTop_toBottomOf="@id/imageView5"
+       app:layout_constraintStart_toStartOf="@id/registration_text"
+       />
+
     <TextView
         android:id="@+id/registration_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="10dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:textColor="@color/white"
         android:text="Registration Number"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/reg_title" />
+
+    <TextView
+        android:id="@+id/msg_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:text="Message"
+        android:textSize="13sp"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/registration_text"
+        app:layout_constraintStart_toStartOf="@id/registration_text"
+        />
 
     <TextView
         android:id="@+id/message_text"
-        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Message"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/registration_text"
         app:layout_constraintStart_toStartOf="@+id/registration_text"
-        app:layout_constraintTop_toBottomOf="@+id/registration_text" />
+        app:layout_constraintTop_toBottomOf="@+id/msg_title" />
+
+    <TextView
+        android:id="@+id/name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/message_text"
+        app:layout_constraintStart_toStartOf="@id/registration_text"
+        />
 
     <TextView
         android:id="@+id/name_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Name"
         android:textSize="20sp"
-        android:layout_marginTop="32dp"
+        android:textColor="@color/white"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="@+id/message_text"
         app:layout_constraintStart_toStartOf="@+id/message_text"
-        app:layout_constraintTop_toBottomOf="@+id/message_text" />
+        app:layout_constraintTop_toBottomOf="@+id/name_title" />
+
+    <TextView
+        android:id="@+id/phone_title"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Phone Number"
+        android:textSize="13sp"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/name_text"
+        app:layout_constraintStart_toStartOf="@id/registration_text"
+        />
 
     <TextView
         android:id="@+id/phone_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Phone Number"
         android:textSize="20sp"
-        android:layout_marginTop="32dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="@+id/name_text"
         app:layout_constraintStart_toStartOf="@+id/name_text"
-        app:layout_constraintTop_toBottomOf="@+id/name_text" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_title" />
 
     <Button
         android:id="@+id/location_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#ffc90a"
         android:fontFamily="sans-serif-smallcaps"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:onClick="showLocation"
         android:text="Show Location on maps"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/phone_text"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/phone_text"
         app:layout_constraintTop_toBottomOf="@+id/phone_text" />
 
     <Button
         android:id="@+id/resolve_button"
-        android:backgroundTint="#4FFB1E"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#4FFB1E"
         android:onClick="resolve"
         android:text="Resolve"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/location_button"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/location_button"
         app:layout_constraintTop_toBottomOf="@id/location_button" />
 

@@ -12,19 +12,22 @@
         android:layout_height="wrap_content">
 
         <TextView
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBaseline_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/title_text"
-            android:text="Ahsan"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:fontFamily="sans-serif-smallcaps"
+            android:padding="10dp"
+            android:text="Ahsan"
             android:textColor="@color/white"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:layout_marginStart="10dp"
-            android:textSize="20sp"
-            android:padding="15dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/resolve_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
         <Button
             android:id="@+id/resolve_button"

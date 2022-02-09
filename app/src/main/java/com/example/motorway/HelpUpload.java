@@ -26,6 +26,12 @@ public class HelpUpload extends AppCompatActivity {
     EditText regNumber, message;
 
     public void sendMessage(View view){
+        String rg = regNumber.getText().toString().trim();
+        if(TextUtils.isEmpty(rg)){
+            regNumber.setError("Registration Number is Required");
+            return;
+        }
+
         int p = ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION);
         if(p!= PackageManager.PERMISSION_GRANTED) {
@@ -36,11 +42,7 @@ public class HelpUpload extends AppCompatActivity {
             LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
             location_current = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         }
-        String regstr = regNumber.getText().toString().trim();
-        if(TextUtils.isEmpty(regstr)){
-            regNumber.setError("REGISTRATION NUMBER IS REQUIRED");
-            return;
-        }
+
         HelpMessage m = new HelpMessage(message.getText().toString(),
                 regNumber.getText().toString(),
                 UserDashboard.UID, location_current.getLatitude(), location_current.getLongitude());

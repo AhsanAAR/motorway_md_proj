@@ -3,6 +3,8 @@ package com.example.motorway;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -21,8 +23,8 @@ public class InfoDetails extends AppCompatActivity {
     public void resolve(View view){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Info");
         reference.child(m.getMsgID()).removeValue();
+        finish();
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

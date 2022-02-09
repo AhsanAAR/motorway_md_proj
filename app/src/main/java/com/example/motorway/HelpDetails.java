@@ -25,6 +25,7 @@ public class HelpDetails extends AppCompatActivity {
     public void resolve(View view){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Help");
         reference.child(m.getMsgID()).removeValue();
+        finish();
     }
 
     public void showLocation(View view){

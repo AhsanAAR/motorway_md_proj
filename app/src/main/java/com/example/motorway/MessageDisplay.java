@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +24,7 @@ public class MessageDisplay extends AppCompatActivity {
     Adapter adapter;
     public static ArrayList<Message> list;
     String type;
+    TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class MessageDisplay extends AppCompatActivity {
         setContentView(R.layout.activity_message_display);
         Bundle b = getIntent().getExtras();
         type = b.getString("type");
+        title = findViewById(R.id.title_desc_id);
+        title.setText(type);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

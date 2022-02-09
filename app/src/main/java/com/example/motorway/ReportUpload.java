@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -22,6 +23,12 @@ public class ReportUpload extends AppCompatActivity {
     EditText report;
     Location location_current;
     public void sendMessage(View view){
+        String rprt = report.getText().toString().trim();
+        if(TextUtils.isEmpty(rprt)){
+            report.setError("Report Message is Required");
+            return;
+        }
+
         int p = ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION);
         if(p!= PackageManager.PERMISSION_GRANTED) {

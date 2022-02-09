@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -15,6 +16,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 public class InformationUpload extends AppCompatActivity {
     EditText query;
     public void sendMessage(View view){
+        String qry = query.getText().toString().trim();
+        if(TextUtils.isEmpty(qry)){
+            query.setError("Information Query is Required");
+            return;
+        }
+
         InformationMsg m = new InformationMsg(query.getText().toString(), UserDashboard.UID);
         try{
             new DAOMessage("Info").add(m).addOnSuccessListener(new OnSuccessListener<Void>() {

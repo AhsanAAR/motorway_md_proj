@@ -19,6 +19,7 @@ public class ReportDetails extends AppCompatActivity {
     public void resolve(View view){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Report");
         reference.child(m.getMsgID()).removeValue();
+        finish();
     }
 
     public void showLocation(View view){
