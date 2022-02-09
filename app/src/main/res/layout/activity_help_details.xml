@@ -65,4 +65,18 @@
         app:layout_constraintEnd_toEndOf="@+id/phone_text"
         app:layout_constraintStart_toStartOf="@+id/phone_text"
         app:layout_constraintTop_toBottomOf="@+id/phone_text" />
+
+    <Button
+        android:id="@+id/resolve_button"
+        android:backgroundTint="#4FFB1E"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:onClick="resolve"
+        android:text="Resolve"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/location_button"
+        app:layout_constraintStart_toStartOf="@+id/location_button"
+        app:layout_constraintTop_toBottomOf="@id/location_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

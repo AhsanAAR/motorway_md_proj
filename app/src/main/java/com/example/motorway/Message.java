@@ -15,6 +15,15 @@ import java.util.Objects;
 public class Message {
     String text;
     String type;
+    String msgID;
+
+    public String getMsgID() {
+        return msgID;
+    }
+
+    public void setMsgID(String msgID) {
+        this.msgID = msgID;
+    }
 
     public String getType() {
         return this.type;

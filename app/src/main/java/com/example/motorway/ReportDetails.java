@@ -8,9 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ReportDetails extends AppCompatActivity {
     TextView msg;
     double latitude, longitude;
+    ReportMessage m;
+
+    public void resolve(View view){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Report");
+        reference.child(m.getMsgID()).removeValue();
+    }
 
     public void showLocation(View view){
         Uri u = Uri.parse("geo:"+latitude+","+longitude);
@@ -24,7 +33,8 @@ public class ReportDetails extends AppCompatActivity {
         setContentView(R.layout.activity_report_details);
 
         int pos = getIntent().getExtras().getInt("pos");
-        ReportMessage m = (ReportMessage) MessageDisplay.list.get(pos);
+        m = (ReportMessage) MessageDisplay.list.get(pos);
+
         msg = findViewById(R.id.message_text);
         msg.setText(m.getText());
         latitude = m.getLatitude();

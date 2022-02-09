@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,6 +16,13 @@ import com.google.firebase.database.FirebaseDatabase;
 public class InfoDetails extends AppCompatActivity {
     TextView msg, name, phone_num;
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+    InformationMsg m;
+
+    public void resolve(View view){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Report");
+        reference.child(m.getMsgID()).removeValue();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +30,7 @@ public class InfoDetails extends AppCompatActivity {
         setContentView(R.layout.activity_info_details);
 
         int pos = getIntent().getExtras().getInt("pos");
-        InformationMsg m = (InformationMsg) MessageDisplay.list.get(pos);
+        m = (InformationMsg) MessageDisplay.list.get(pos);
 
         msg = findViewById(R.id.message_text);
         name = findViewById(R.id.name_text);

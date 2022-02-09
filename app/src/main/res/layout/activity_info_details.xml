@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/mw1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HelpDetails">
+    tools:context=".InfoDetails">
 
     <TextView
         android:id="@+id/message_text"
@@ -38,7 +39,18 @@
         app:layout_constraintEnd_toEndOf="@+id/name_text"
         app:layout_constraintStart_toStartOf="@+id/name_text"
         app:layout_constraintTop_toBottomOf="@+id/name_text" />
-    android:background="@drawable/mw1"
-    tools:context=".InfoDetails">
+
+    <Button
+        android:id="@+id/resolve_button"
+        android:backgroundTint="#4FFB1E"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:onClick="resolve"
+        android:text="Resolve"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/name_text"
+        app:layout_constraintStart_toStartOf="@+id/name_text"
+        app:layout_constraintTop_toBottomOf="@id/name_text"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

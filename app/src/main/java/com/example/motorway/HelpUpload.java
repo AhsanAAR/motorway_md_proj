@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -34,6 +35,11 @@ public class HelpUpload extends AppCompatActivity {
         else {
             LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
             location_current = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        }
+        String regstr = regNumber.getText().toString().trim();
+        if(TextUtils.isEmpty(regstr)){
+            regNumber.setError("REGISTRATION NUMBER IS REQUIRED");
+            return;
         }
         HelpMessage m = new HelpMessage(message.getText().toString(),
                 regNumber.getText().toString(),

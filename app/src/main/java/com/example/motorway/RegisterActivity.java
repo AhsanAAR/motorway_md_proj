@@ -54,17 +54,18 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = mpassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
-                    mpassword.setError("Email is Required");
+                    memail.setError("Email is Required");
                     return;
                 }
                 if(TextUtils.isEmpty(password)){
-                    memail.setError("Password is Required");
+                    mpassword.setError("Password is Required");
                     return;
                 }
                 if(password.length() < 6){
                     mpassword.setError("Password must be at at least 6 character long");
                     return;
                 }
+
                 fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

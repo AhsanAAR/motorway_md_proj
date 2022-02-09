@@ -19,7 +19,13 @@ import com.google.firebase.database.FirebaseDatabase;
 public class HelpDetails extends AppCompatActivity {
     TextView reg_num, msg, name, phone_num;
     double latitude, longitude;
+    HelpMessage m;
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+
+    public void resolve(View view){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Report");
+        reference.child(m.getMsgID()).removeValue();
+    }
 
     public void showLocation(View view){
         Uri u = Uri.parse("geo:"+latitude+","+longitude);
@@ -32,7 +38,7 @@ public class HelpDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_details);
         int pos = getIntent().getExtras().getInt("pos");
-        HelpMessage m = (HelpMessage) MessageDisplay.list.get(pos);
+        m = (HelpMessage) MessageDisplay.list.get(pos);
 
         reg_num = findViewById(R.id.registration_text);
         msg = findViewById(R.id.message_text);
