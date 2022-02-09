@@ -23,7 +23,7 @@ public class HelpDetails extends AppCompatActivity {
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
     public void resolve(View view){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Report");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Help");
         reference.child(m.getMsgID()).removeValue();
     }
 

@@ -19,7 +19,7 @@ public class InfoDetails extends AppCompatActivity {
     InformationMsg m;
 
     public void resolve(View view){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Report");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Info");
         reference.child(m.getMsgID()).removeValue();
     }
 
